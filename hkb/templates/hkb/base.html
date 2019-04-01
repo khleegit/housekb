@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>고객 결제 관리</title>
+
+    <!-- Bootstrap -->
+    <link href="../../static/pap/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../static/pap/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../../static/pap/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../../static/pap/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="../../static/pap/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../../static/pap/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="../../static/pap/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../../static/pap/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="{% url 'index' %}" class="site_title"><i class="fa fa-paw"></i> <span>고객결제관리</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>강형구</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              	<div class="menu_section">
+	                <h3>General</h3>
+	                <ul class="nav side-menu">
+	                	<li><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
+	                	<li><a><i class="fa fa-credit-card"></i> 결제내역 <span class="fa fa-chevron-down"></span></a>
+	                		<ul class="nav child_menu">
+	                    		<li><a href="{% url 'payment' %}">통합결제내역조회</a></li>
+	                      		<li><a>신용카드<span class="fa fa-chevron-down"></span></a>
+	                      			<ul class="nav child_menu">
+	                      				<li class="sub_menu"><a href="{% url 'payment' %}">내역조회</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">실패조회</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">결제취소</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">매입요청</a></li>
+			                  		</ul>
+	                      		</li>
+	                      		<li><a>현금영수증<span class="fa fa-chevron-down"></span></a>
+		                      		<ul class="nav child_menu">
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">내역조회</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">실패조회</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">결제취소</a></li>
+			                  		</ul>
+		                      	</li> 
+		                      	<li><a>에스크로<span class="fa fa-chevron-down"></span></a>
+		                      		<ul class="nav child_menu">
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">내역조회</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">배송조회</a></li>
+			                  		</ul>
+		                      	</li>            
+	                    	</ul>
+	                  	</li>
+	                  	<li><a><i class="fa fa-calculator"></i> 정산내역 <span class="fa fa-chevron-down"></span></a>
+	                		<ul class="nav child_menu">
+	                			<li><a href="{% url 'payment' %}">승인/정산달력</a></li>
+	                    		<li><a href="{% url 'payment' %}">통합정산내역조회</a></li>
+	                    		<li><a href="{% url 'payment' %}">정산예정내역조회</a></li>
+	                    		<li><a href="{% url 'payment' %}">세금계산서조회</a></li>
+	                    		<li><a href="{% url 'payment' %}">매출내역조회</a></li>
+	                    	</ul>
+	                  	</li>
+	                  	<li><a><i class="fa fa-archive"></i> 기초 <span class="fa fa-chevron-down"></span></a>
+	                		<ul class="nav child_menu">
+	                      		<li><a>사용자관리<span class="fa fa-chevron-down"></span></a>
+	                      			<ul class="nav child_menu">
+	                      				<li class="sub_menu"><a href="{% url 'payment' %}">사용자리스트</a></li>
+	                      				<li class="sub_menu"><a href="{% url 'payment' %}">사용자상세정보</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">화면권한관리</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">사용자직급/부서관리</a></li>     
+			                      	</ul>
+	                      		</li>
+	                      		<li><a>거래처정보<span class="fa fa-chevron-down"></span></a>
+		                      		<ul class="nav child_menu">
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">거래처리스트</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">거래처상세정보</a></li>
+			                  		</ul>
+		                      	</li>         
+	                    	</ul>
+	                  	</li>
+	                </ul>
+            	</div>
+
+            	<br />
+   
+              	<div class="menu_section">
+	                <h3>Additional</h3>
+	                <ul class="nav side-menu">
+	                	<li><a><i class="fa fa-question"></i> 고객지원 <span class="fa fa-chevron-down"></span></a>
+	                		<ul class="nav child_menu">
+	                    		<li><a href="{% url 'payment' %}">공지사항</a></li>
+	                      		<li><a>문의하기<span class="fa fa-chevron-down"></span></a>
+	                      			<ul class="nav child_menu">
+	                      				<li class="sub_menu"><a href="{% url 'payment' %}">FAQ</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">상담문의</a></li>	                  
+			                  		</ul>
+	                      		</li>
+	                      		<li><a>기술지원<span class="fa fa-chevron-down"></span></a>
+		                      		<ul class="nav child_menu">
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">매뉴얼</a></li>
+			                      		<li class="sub_menu"><a href="{% url 'payment' %}">각종 서식</a></li>
+			                  		</ul>
+		                      	</li>
+	                    	</ul>
+	                  	</li>
+	                  	<li><a href="{% url 'payment' %}"><i class="fa fa-gift"></i> 부가서비스</a></li> 
+	                </ul>
+	            </div>
+	        </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="{% url 'login' %}">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">강형구
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+                <!-- 메일 내용 -->
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="" /></span>
+                        <span>
+                          <span>정수철</span>
+                          <span class="time">12 mins ago</span>
+                        </span>
+                        <span class="message">
+                        	KS-NET과 제약회사의 ERP시스템과 연동할 정보에 대한 전문이나 상세 컬럼값이 필요합니다. 
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="" /></span>
+                        <span>
+                          <span>이경호</span>
+                          <span class="time">2 hour ago</span>
+                        </span>
+                        <span class="message">
+                        	보건의료 빅데이터 개방시스템의 공공데이터 목록입니다. 
+                          	https://opendata.hira.or.kr/op/opc/selectOpenDataList.do?sno=0&publDataTpCd=&searchCnd=&searchWrd=&pageIndex=2
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="" /></span>
+                        <span>
+                          <span>이경호</span>
+                          <span class="time">7 months ago</span>
+                        </span>
+                        <span class="message">
+                        	의료기관별 상세정보 서비스, 병원코드 정보 서비스, 약국정보 서비스, 요양기관 현황정보를 검토하세요.
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="" /></span>
+                        <span>
+                          <span>정수철</span>
+                          <span class="time">a year ago</span>
+                        </span>
+                        <span class="message">
+                        	구글 공유사이트 주소입니다.
+                          	https://sites.google.com/view/smartpharm/%ED%99%88
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+        <div class="right_col" role="main">
+        	{% block contents %}
+        	{% endblock %}
+        </div>
+    <!-- jQuery -->
+    <script src="../../static/pap/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../static/pap/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../static/pap/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../../static/pap/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../../static/pap/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../../static/pap/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../../static/pap/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../../static/pap/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../../static/pap/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../../static/pap/vendors/Flot/jquery.flot.js"></script>
+    <script src="../../static/pap/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../../static/pap/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../../static/pap/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../../static/pap/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../../static/pap/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../../static/pap/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../../static/pap/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../../static/pap/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../../static/pap/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../../static/pap/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../../static/pap/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../../static/pap/vendors/moment/min/moment.min.js"></script>
+    <script src="../../static/pap/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../../static/pap/build/js/custom.min.js"></script>
+	
+  </body>
+</html>
+
+
+
+<!--
+base.html test
+
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/pap.css' %}">
+    </head>
+    <body>
+	    <div class="page-header">
+	    	{% if user.is_authenticated %}
+			    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+			{% endif %}
+	        <h1><a href="/">Django Girls Blog</a></h1>
+	    </div>
+	    <div class="content container">
+	        <div class="row">
+	            <div class="col-md-8">
+	            {% block content %}
+	            {% endblock %}
+	            </div>
+	        </div>
+	    </div>
+	</body>
+</html>
+-->

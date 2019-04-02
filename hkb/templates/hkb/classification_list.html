@@ -1,0 +1,14 @@
+{% extends 'hkb/base.html' %}
+
+{% block contents %}
+	{% for tl in total_list %}
+		<div>
+    		<h4> 수입 및 지출 계정 : {{tl.cf01}}</h4>
+    		<p> 계정 : {{tl.cf02}}</p>
+    		<p> 계정상세 : {{tl.cf03}}</p>
+    		<p> 작성자 : {{tl.author}}</p>
+    		<p> 생성일 : {{tl.created_date}}</p>
+    		<p> 수정일 : {{tl.edited_date}}</p> 		
+		</div>
+	{% endfor %}
+{% endblock %}

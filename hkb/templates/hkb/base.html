@@ -9,26 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>고객 결제 관리</title>
+    <title>우리집 가계부</title>
 
     <!-- Bootstrap -->
-    <link href="../../static/pap/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/hkb/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../../static/pap/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../static/hkb/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../../static/pap/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="../../static/hkb/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="../../static/pap/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="../../static/hkb/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
-    <link href="../../static/pap/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="../../static/hkb/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="../../static/pap/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="../../static/hkb/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="../../static/pap/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="../../static/hkb/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../../static/pap/build/css/custom.min.css" rel="stylesheet">
+    <link href="../../static/hkb/build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -37,7 +37,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{% url 'index' %}" class="site_title"><i class="fa fa-paw"></i> <span>고객결제관리</span></a>
+              <a href="{% url 'dashboard' %}" class="site_title"><i class="fa fa-paw"></i> <span>우리집 가계부</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -49,7 +49,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>강형구</h2>
+                <h2>공미선</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -61,7 +61,7 @@
               	<div class="menu_section">
 	                <h3>General</h3>
 	                <ul class="nav side-menu">
-	                	<li><a href="{% url 'index' %}"><i class="fa fa-home"></i> Home </a></li>
+	                	<li><a href="{% url 'dashboard' %}"><i class="fa fa-home"></i> Home </a></li>
 	                	<li><a><i class="fa fa-credit-card"></i> 결제내역 <span class="fa fa-chevron-down"></span></a>
 	                		<ul class="nav child_menu">
 	                    		<li><a href="{% url 'payment' %}">통합결제내역조회</a></li>
@@ -176,7 +176,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">강형구
+                    <img src="images/img.jpg" alt="">공미선
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -268,45 +268,45 @@
         	{% endblock %}
         </div>
     <!-- jQuery -->
-    <script src="../../static/pap/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../../static/hkb/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="../../static/pap/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../static/hkb/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="../../static/pap/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="../../static/hkb/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="../../static/pap/vendors/nprogress/nprogress.js"></script>
+    <script src="../../static/hkb/vendors/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
-    <script src="../../static/pap/vendors/Chart.js/dist/Chart.min.js"></script>
+    <script src="../../static/hkb/vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- gauge.js -->
-    <script src="../../static/pap/vendors/gauge.js/dist/gauge.min.js"></script>
+    <script src="../../static/hkb/vendors/gauge.js/dist/gauge.min.js"></script>
     <!-- bootstrap-progressbar -->
-    <script src="../../static/pap/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="../../static/hkb/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
-    <script src="../../static/pap/vendors/iCheck/icheck.min.js"></script>
+    <script src="../../static/hkb/vendors/iCheck/icheck.min.js"></script>
     <!-- Skycons -->
-    <script src="../../static/pap/vendors/skycons/skycons.js"></script>
+    <script src="../../static/hkb/vendors/skycons/skycons.js"></script>
     <!-- Flot -->
-    <script src="../../static/pap/vendors/Flot/jquery.flot.js"></script>
-    <script src="../../static/pap/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../../static/pap/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../../static/pap/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../../static/pap/vendors/Flot/jquery.flot.resize.js"></script>
+    <script src="../../static/hkb/vendors/Flot/jquery.flot.js"></script>
+    <script src="../../static/hkb/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../../static/hkb/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../../static/hkb/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../../static/hkb/vendors/Flot/jquery.flot.resize.js"></script>
     <!-- Flot plugins -->
-    <script src="../../static/pap/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="../../static/pap/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="../../static/pap/vendors/flot.curvedlines/curvedLines.js"></script>
+    <script src="../../static/hkb/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../../static/hkb/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../../static/hkb/vendors/flot.curvedlines/curvedLines.js"></script>
     <!-- DateJS -->
-    <script src="../../static/pap/vendors/DateJS/build/date.js"></script>
+    <script src="../../static/hkb/vendors/DateJS/build/date.js"></script>
     <!-- JQVMap -->
-    <script src="../../static/pap/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../../static/pap/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../../static/pap/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="../../static/hkb/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../../static/hkb/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../../static/hkb/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="../../static/pap/vendors/moment/min/moment.min.js"></script>
-    <script src="../../static/pap/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../static/hkb/vendors/moment/min/moment.min.js"></script>
+    <script src="../../static/hkb/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="../../static/pap/build/js/custom.min.js"></script>
+    <script src="../../static/hkb/build/js/custom.min.js"></script>
 	
   </body>
 </html>

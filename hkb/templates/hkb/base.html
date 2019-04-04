@@ -26,7 +26,8 @@
     <link href="../../static/hkb/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="../../static/hkb/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
+    {% block heads %}
+    {% endblock %}
     <!-- Custom Theme Style -->
     <link href="../../static/hkb/build/css/custom.min.css" rel="stylesheet">
   </head>
@@ -64,7 +65,7 @@
 	                	<li><a href="{% url 'dashboard' %}"><i class="fa fa-home"></i> Home </a></li>
 	                	<li><a><i class="fa fa-credit-card"></i> 결제내역 <span class="fa fa-chevron-down"></span></a>
 	                		<ul class="nav child_menu">
-	                    		<li><a href="{% url 'classification_list' %}">계정 분류</a></li>
+	                    		<li><a href="{% url 'classification_list' %}">계정분류</a></li>
 	                      		<li><a>신용카드<span class="fa fa-chevron-down"></span></a>
 	                      			<ul class="nav child_menu">
 	                      				<li class="sub_menu"><a href="{% url 'payment' %}">내역조회</a></li>
@@ -283,6 +284,8 @@
     <script src="../../static/hkb/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
     <script src="../../static/hkb/vendors/iCheck/icheck.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
     <!-- Skycons -->
     <script src="../../static/hkb/vendors/skycons/skycons.js"></script>
     <!-- Flot -->

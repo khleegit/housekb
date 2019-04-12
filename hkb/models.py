@@ -12,3 +12,4 @@ class Classification(models.Model):
     def edited(self):
         self.edited_date = timezone.now()
         self.save()
+

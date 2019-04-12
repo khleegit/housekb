@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Classification
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def login(request):
-	return render(request, 'hkb/login.html', {})
+	return render(request, 'registration/login.html', {})
 
 
 def dashboard(request):
